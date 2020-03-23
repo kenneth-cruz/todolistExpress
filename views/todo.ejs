@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>KenKen To Do List</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="hero">
+    <section class="displayInput">
+      <h1>KenKen's To-Do List</h1>
+      <form id="listInput" action="/toDoList" method="post">
+        <input name="task" placeholder="Enter Task" id="listItem" type="text">
+        <button type="submit" id="addToList">Add</button>
+      </form>
+    </section>
+    <section class="shownList">
+      <ol id="addUl">
+        <% for(var i=0; i<tasksArray.length; i++) {%>
+          <li class="toDoList">
+            <span><%= tasksArray[i].task %></span>
+            <span><%= tasksArray[i].completed %></span>
+            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+          </li>
+        <% } %>
+      </ol>
+    </section>
+    <section class="displayInput">
+      <img id="todoImage"src="todo.gif" alt="gif of someone's to-do list">
+      <h1> Instructions: </h1>
+      <h2> 1. Enter a task you plan on doing in the form.</h2>
+      <h2> 2. Click on the actual task when you have completed </h2>
+      <h2> 3. Then you can click on the trash can when you're done :)</h2>
+    </section>
+
+  </section>
+
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
